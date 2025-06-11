@@ -191,6 +191,10 @@ const MCPToolsPanel: React.FC<MCPToolsPanelProps> = ({
             : 'Using fallback simulation - check Smithery API connection'
           }
         </p>
+        <div className="mt-2 text-xs text-white/40">
+          <p>API Key: 2b65...6a78</p>
+          <p>Endpoint: api.smithery.ai/v1/mcp/tavus</p>
+        </div>
       </div>
 
       {/* Tool Selection */}
@@ -287,7 +291,7 @@ const MCPToolsPanel: React.FC<MCPToolsPanelProps> = ({
           <p className="text-sm">No MCP tools available</p>
           <p className="text-xs mt-1">Check Smithery API connection</p>
           <div className="mt-4 text-xs text-white/40">
-            <p>API Key: 4e10...bb18</p>
+            <p>API Key: 2b65...6a78</p>
             <p>Endpoint: api.smithery.ai/v1/mcp/tavus</p>
           </div>
         </div>

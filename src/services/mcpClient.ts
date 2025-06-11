@@ -29,7 +29,7 @@ interface MCPTool {
 class MCPClient {
   private requestId = 0;
   private tools: MCPTool[] = [];
-  private smitheryApiKey = '4e107aaf-505c-4c4f-b700-696412d2a2f8';
+  private smitheryApiKey = '2b65ef86349841bbbee6451902796a78';
   private smitheryBaseUrl = 'https://api.smithery.ai/v1';
   private mcpServerUrl = 'https://api.smithery.ai/v1/mcp/tavus';
 
@@ -309,7 +309,7 @@ class MCPClient {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'e3cb935576c8480da0b740310397bb44',
+        'x-api-key': '2b65ef86349841bbbee6451902796a78',
       },
       body: JSON.stringify({
         replica_id: args.replica_id,
@@ -343,7 +343,7 @@ class MCPClient {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'e3cb935576c8480da0b740310397bb44',
+        'x-api-key': '2b65ef86349841bbbee6451902796a78',
       },
       body: JSON.stringify({
         text: args.text,
@@ -369,7 +369,7 @@ class MCPClient {
     const response = await fetch(`https://tavusapi.com/v2/conversations/${args.conversation_id}/end`, {
       method: 'POST',
       headers: {
-        'x-api-key': 'e3cb935576c8480da0b740310397bb44',
+        'x-api-key': '2b65ef86349841bbbee6451902796a78',
       },
     });
 
@@ -409,7 +409,7 @@ class MCPClient {
     const response = await fetch(`https://tavusapi.com/v2/conversations/${args.conversation_id}`, {
       method: 'GET',
       headers: {
-        'x-api-key': 'e3cb935576c8480da0b740310397bb44',
+        'x-api-key': '2b65ef86349841bbbee6451902796a78',
       },
     });
 
