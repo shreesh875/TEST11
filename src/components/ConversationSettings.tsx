@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Settings, Clock, Mic, Video, Globe, Shield, Wrench } from 'lucide-react';
+import { Settings, Clock, Mic, Video, Globe } from 'lucide-react';
 
 interface ConversationSettingsProps {
   onStartConversation: (options: any) => void;
@@ -12,9 +12,9 @@ const ConversationSettings: React.FC<ConversationSettingsProps> = ({
 }) => {
   const [showSettings, setShowSettings] = useState(false);
   const [settings, setSettings] = useState({
-    conversationName: 'MCP AI Video Chat Session',
-    conversationalContext: 'You are an advanced AI assistant in a video chat application powered by MCP (Model Context Protocol). You can see and hear the user through video and audio. You have access to advanced tools through MCP. Be engaging, helpful, and natural in your responses.',
-    customGreeting: 'Hello! I\'m your MCP-powered AI assistant. I can see and hear you through this video chat and have access to advanced tools. How can I help you today?',
+    conversationName: 'AI Video Chat Session',
+    conversationalContext: 'You are a helpful AI assistant in a video chat. Be engaging, natural, and respond to the user with both voice and gestures. Introduce yourself when the conversation starts.',
+    customGreeting: 'Hello! I\'m your AI assistant. I can see and hear you through this video chat. How can I help you today?',
     maxDuration: 3600, // 1 hour
     enableRecording: false,
     enableClosedCaptions: true,
@@ -45,8 +45,8 @@ const ConversationSettings: React.FC<ConversationSettingsProps> = ({
           disabled={isLoading}
           className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 disabled:from-gray-600 disabled:to-gray-600 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105 disabled:scale-100 flex items-center space-x-2"
         >
-          <Wrench className="w-4 h-4" />
-          <span>Quick Start MCP</span>
+          <Video className="w-4 h-4" />
+          <span>Quick Start</span>
         </button>
         
         <button
@@ -54,7 +54,7 @@ const ConversationSettings: React.FC<ConversationSettingsProps> = ({
           className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-colors flex items-center space-x-2"
         >
           <Settings className="w-4 h-4" />
-          <span>MCP Settings</span>
+          <span>Settings</span>
         </button>
       </div>
     );
@@ -64,8 +64,8 @@ const ConversationSettings: React.FC<ConversationSettingsProps> = ({
     <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 space-y-6">
       <div className="flex items-center justify-between">
         <h3 className="text-white font-semibold text-lg flex items-center space-x-2">
-          <Wrench className="w-5 h-5 text-purple-400" />
-          <span>MCP Conversation Settings</span>
+          <Settings className="w-5 h-5 text-purple-400" />
+          <span>Conversation Settings</span>
         </h3>
         <button
           onClick={() => setShowSettings(false)}
@@ -73,16 +73,6 @@ const ConversationSettings: React.FC<ConversationSettingsProps> = ({
         >
           ✕
         </button>
-      </div>
-
-      <div className="bg-purple-500/10 border border-purple-500/20 rounded-lg p-4">
-        <div className="flex items-center space-x-2 mb-2">
-          <Wrench className="w-4 h-4 text-purple-400" />
-          <span className="text-purple-300 font-medium text-sm">MCP Integration</span>
-        </div>
-        <p className="text-white/70 text-sm">
-          This conversation will be powered by Model Context Protocol (MCP), providing advanced tool calling capabilities and enhanced AI interactions.
-        </p>
       </div>
 
       <div className="space-y-4">
@@ -94,18 +84,18 @@ const ConversationSettings: React.FC<ConversationSettingsProps> = ({
             value={settings.conversationName}
             onChange={(e) => setSettings(prev => ({ ...prev, conversationName: e.target.value }))}
             className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            placeholder="Enter MCP conversation name..."
+            placeholder="Enter conversation name..."
           />
         </div>
 
         <div className="space-y-3">
-          <label className="text-white/80 text-sm font-medium">AI Context (MCP Enhanced)</label>
+          <label className="text-white/80 text-sm font-medium">AI Context</label>
           <textarea
             value={settings.conversationalContext}
             onChange={(e) => setSettings(prev => ({ ...prev, conversationalContext: e.target.value }))}
             className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
             rows={3}
-            placeholder="Describe how the MCP-powered AI should behave..."
+            placeholder="Describe how the AI should behave..."
           />
         </div>
 
@@ -116,7 +106,7 @@ const ConversationSettings: React.FC<ConversationSettingsProps> = ({
             value={settings.customGreeting}
             onChange={(e) => setSettings(prev => ({ ...prev, customGreeting: e.target.value }))}
             className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            placeholder="What should the MCP AI say first?"
+            placeholder="What should the AI say first?"
           />
         </div>
 
@@ -200,8 +190,8 @@ const ConversationSettings: React.FC<ConversationSettingsProps> = ({
           disabled={isLoading}
           className="flex-1 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 disabled:from-gray-600 disabled:to-gray-600 text-white py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105 disabled:scale-100 flex items-center justify-center space-x-2"
         >
-          <Wrench className="w-4 h-4" />
-          <span>{isLoading ? 'Starting MCP...' : 'Start MCP Conversation'}</span>
+          <Video className="w-4 h-4" />
+          <span>{isLoading ? 'Starting...' : 'Start Conversation'}</span>
         </button>
         
         <button
